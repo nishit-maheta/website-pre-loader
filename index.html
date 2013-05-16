@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>website-pre-loader</title>
+  <meta name="description" content="website-pre-loader">
+  <meta name="author" content="Nishit Mehat">
+  <script src="js/jquery-1.9.0.min.js" ></script>
+  <script src="js/loader.js" ></script>
+  <script>
+  	$( document ).ready(function(){
+		try{
+			var imageArray = [
+				'images/1264107698bi3up6.jpg',
+				'images/12923298509657AP.jpg',
+				'http://www.foamwork.net/images/fw4-6.jpg'
+			];
+			$("body").loader({"imageArray" : imageArray,'onComplete' : function(){ $('#main').fadeIn('slow'); }});
+		}catch( e ){
+			alert( e.message );
+		}
+	});
+  </script>
+</head>
+<body>
+<div id="main" style="display:none;" >
+
+	<div style="width:100%;">
+    	<div style="width:300px; height:200px; float:left; position:relative;"> 
+        	<img src="images/1264107698bi3up6.jpg"  class="preload" style="width:100%" />
+        </div>
+		<div style="width:300px; height:200px; float:left; position:relative;">
+        	 <img src="images/12923298509657AP.jpg" style="width:100%" class="preload" />
+        </div>
+        <div style="width:300px; height:200px; float:left; position:relative;">
+        	<img src="http://www.foamwork.net/images/fw4-6.jpg" style="width:100%" class="preload" />
+        </div>    	
+    </div>
+    
+</div>
+</body>
+</html>
